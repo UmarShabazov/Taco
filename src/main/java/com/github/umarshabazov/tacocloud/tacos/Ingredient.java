@@ -1,14 +1,13 @@
 package com.github.umarshabazov.tacocloud.tacos;
 
-import lombok.AccessLevel;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import org.springframework.data.annotation.Id;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import lombok.*;
 
 @Data
-@AllArgsConstructor
+@RequiredArgsConstructor
 @NoArgsConstructor (access= AccessLevel.PRIVATE, force=true)
+@Entity
 public class Ingredient {
 
     @Id
