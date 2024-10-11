@@ -1,13 +1,12 @@
 package com.github.umarshabazov.tacocloud.tacos.web;
 
-import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
 import com.github.umarshabazov.tacocloud.tacos.TacoOrder;
+import com.github.umarshabazov.tacocloud.tacos.TacoUDT;
 import com.github.umarshabazov.tacocloud.tacos.data.IngredientRepository;
 import jakarta.validation.Valid;
-import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -66,7 +65,7 @@ public class DesignTacoController {
 
     @PostMapping
     public String processTaco(
-            @Valid Taco taco, Errors errors,
+            @Valid TacoUDT taco, Errors errors,
             @ModelAttribute TacoOrder tacoOrder) {
 
         if (errors.hasErrors()) {
