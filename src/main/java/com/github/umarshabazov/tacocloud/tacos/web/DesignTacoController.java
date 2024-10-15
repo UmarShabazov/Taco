@@ -4,7 +4,6 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import com.github.umarshabazov.tacocloud.tacos.TacoOrder;
-import com.github.umarshabazov.tacocloud.tacos.TacoUDT;
 import com.github.umarshabazov.tacocloud.tacos.data.IngredientRepository;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -65,7 +64,7 @@ public class DesignTacoController {
 
     @PostMapping
     public String processTaco(
-            @Valid TacoUDT taco, Errors errors,
+            @Valid Taco taco, Errors errors,
             @ModelAttribute TacoOrder tacoOrder) {
 
         if (errors.hasErrors()) {

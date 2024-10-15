@@ -1,16 +1,16 @@
 package com.github.umarshabazov.tacocloud.tacos;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 import lombok.*;
-import org.springframework.data.cassandra.core.mapping.PrimaryKey;
-import org.springframework.data.cassandra.core.mapping.Table;
 
 @Data
-@AllArgsConstructor
+@RequiredArgsConstructor
 @NoArgsConstructor (access= AccessLevel.PRIVATE, force=true)
-@Table ("Ingredients")
+@Entity
 public class Ingredient {
 
-    @PrimaryKey
+    @Id
     private final String id;
     private final String name;
     private final Type type;
@@ -19,4 +19,3 @@ public class Ingredient {
         WRAP, PROTEIN, VEGGIES, CHEESE, SAUCE
     }
 }
-
