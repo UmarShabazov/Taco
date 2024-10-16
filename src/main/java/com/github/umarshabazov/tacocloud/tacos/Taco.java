@@ -28,4 +28,8 @@ public class Taco {
     public void addIngredient(Ingredient ingredient) {
         this.ingredients.add(ingredient);
     }
+
+    public Iterable<Taco> getContent() {
+    return  null;
+    }
 }
