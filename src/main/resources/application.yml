@@ -3,4 +3,6 @@ application:
   name: taco-cloud
   thymeleaf:
     cache: false
-
+data:
+  rest:
+  base-path: /data-api

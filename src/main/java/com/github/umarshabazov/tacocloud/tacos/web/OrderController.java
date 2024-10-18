@@ -20,10 +20,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 
-
-import java.net.Authenticator;
-import java.security.Principal;
-
 @Slf4j
 @Controller
 @RequestMapping ("/orders")
@@ -31,16 +27,13 @@ import java.security.Principal;
 public class OrderController {
 
     private OrderProps props;
+    private OrderRepository orderRepository;
 
     public OrderController(OrderRepository orderRepo, OrderProps props) {
         this.orderRepository = orderRepo;
         this.props = props;
     }
 
-    private OrderRepository orderRepository;
-    public OrderController(OrderRepository orderRepository) {
-        this.orderRepository = orderRepository;
-    }
 
     @GetMapping("/current")
     public String orderForm() {
